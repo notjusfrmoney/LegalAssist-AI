@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import logging
+
 from fastapi import APIRouter, HTTPException
 
 from app.core.config import get_settings
@@ -9,6 +11,7 @@ from app.schemas.chat import ChatRequest, ChatResponse
 
 router = APIRouter(prefix="/api/v1", tags=["chat"])
 settings = get_settings()
+logger = logging.getLogger(__name__)
 
 
 @router.post("/chat", response_model=ChatResponse)
@@ -17,6 +20,12 @@ async def chat_endpoint(request: ChatRequest) -> ChatResponse:
         return await generate_chat_response(request, settings)
     except ChatServiceError as error:
         raise HTTPException(status_code=error.status_code, detail=error.detail) from error
+    except Exception as error:
+        logger.exception("Unexpected chat request failure")
+        raise HTTPException(
+            status_code=500,
+            detail="The assistant could not complete the request. Please try again.",
+        ) from error
 
 
 @router.get("/sources")

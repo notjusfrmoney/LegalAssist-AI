@@ -25,10 +25,19 @@ class ChatCitation(BaseModel):
     source_id: str | None = None
     source_filename: str | None = None
     document_title: str | None = None
+    source_type: str | None = None
+    authority_level: str | None = None
     section: str | None = None
     section_number: str | None = None
     page_start: int | None = None
     page_end: int | None = None
+    module_id: str | None = None
+    module_heading: str | None = None
+    section_heading: str | None = None
+    heading_path: list[str] | None = None
+    location: str | None = None
+    claim_ids: list[str] = Field(default_factory=list)
+    unresolved_refs: list[str] = Field(default_factory=list)
     source_url: str | None = None
     verification_status: str | None = None
     excerpt: str | None = None

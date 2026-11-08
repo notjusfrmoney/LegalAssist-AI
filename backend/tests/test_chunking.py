@@ -54,8 +54,10 @@ def test_chunk_document_keeps_faq_question_and_answer_together() -> None:
     assert any("What" in chunk["text"] and "The definition of" in chunk["text"] for chunk in chunks)
 
 
-def test_chunk_extracted_documents_creates_processed_jsonl_with_metadata() -> None:
-    output_path = ROOT / "knowledge_base" / "processed" / "test_chunks.jsonl"
+def test_chunk_extracted_documents_creates_processed_jsonl_with_metadata(
+    tmp_path: Path,
+) -> None:
+    output_path = tmp_path / "test_chunks.jsonl"
     chunks = chunk_extracted_documents(EXTRACTED_DIR, output_path=output_path, chunk_size=3500, overlap=400)
 
     assert chunks
@@ -72,9 +74,6 @@ def test_chunk_extracted_documents_creates_processed_jsonl_with_metadata() -> No
     assert any(chunk.get("source_filename") for chunk in chunks)
     assert any(chunk.get("source_url") for chunk in chunks)
     assert any(chunk.get("verification_status") for chunk in chunks)
-
-    output_path.unlink(missing_ok=True)
-
 
 def test_generate_chunk_report_reports_counts_and_oversized_sections() -> None:
     chunks = [

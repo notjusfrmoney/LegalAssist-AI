@@ -61,6 +61,45 @@
       "verification_status": "needs_review",
       "is_primary_legal_source": false,
       "file_status": "present"
+    },
+    {
+      "source_id": "employment_wage_practical_guide_claude",
+      "filename": "employment_wage_practical_guide_claude.md",
+      "document_title": "Employment Wage Rights – Practical Action Guide for Employees in India",
+      "publisher": "Claude-generated independent practical guide",
+      "source_url": null,
+      "source_type": "practical_guidance",
+      "authority_level": "non_authoritative",
+      "jurisdiction": "India",
+      "government_sphere": "central_and_state_code",
+      "verification_status": "pending_human_review",
+      "review_status": "pending_human_review",
+      "is_primary_legal_source": false,
+      "file_status": "present",
+      "sha256": "f88f7f786f3ca7f13d10f9d6984ea414a4671d567ec92f672065f4b2d4657873",
+      "companion_files": [
+        {
+          "filename": "claude_legal_source_register.md",
+          "file_status": "not_present"
+        },
+        {
+          "filename": "claude_legal_risk_review.md",
+          "file_status": "not_present"
+        },
+        {
+          "filename": "claude_unresolved_issues.md",
+          "file_status": "not_present"
+        },
+        {
+          "filename": "claude_research_summary.md",
+          "file_status": "not_present"
+        }
+      ],
+      "limitations": [
+        "The guide is supplementary practical guidance, not an authoritative legal source.",
+        "Its cited claim register, risk review, unresolved-issues register, and research summary are unavailable; referenced claims cannot be independently checked from those companion files.",
+        "UNRES references identify unresolved issues and must not be presented as settled law."
+      ]
     }
   ],
   "external_references": [
@@ -86,5 +125,11 @@
     "code_on_wages_central_rules_2026.pdf",
     "labour_codes_faq_january_2026.pdf",
     "labour_codes_additional_faq_march_2026.pdf"
+  ],
+  "missing_companion_files": [
+    "claude_legal_source_register.md",
+    "claude_legal_risk_review.md",
+    "claude_unresolved_issues.md",
+    "claude_research_summary.md"
   ]
 }

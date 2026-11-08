@@ -11,6 +11,13 @@ import numpy as np
 from app.rag.build_index import DEFAULT_VECTOR_STORE_DIR, build_and_save_faiss_index, load_existing_index
 from app.rag.embed import MODEL_NAME, embed_query, load_embedding_model
 
+_AUTHORITY_ORDER = {
+    "statutory": 0,
+    "delegated_rules": 1,
+    "official_guidance": 2,
+    "non_authoritative": 3,
+}
+
 
 def retrieve_top_k(
     query: str,
@@ -42,7 +49,8 @@ def retrieve_top_k(
     model = load_embedding_model(model_name)
     query_vector = embed_query(query, model=model)
     faiss.normalize_L2(query_vector)
-    distances, indices = index.search(query_vector, min(top_k, index.ntotal))
+    candidate_count = min(max(top_k * 4, top_k), index.ntotal)
+    distances, indices = index.search(query_vector, candidate_count)
 
     results: list[dict[str, Any]] = []
     for score, vector_id in zip(distances[0], indices[0]):
@@ -63,13 +71,30 @@ def retrieve_top_k(
                 "page_number": row.get("page_number"),
                 "original_pdf_page_number": row.get("original_pdf_page_number"),
                 "source_url": row.get("source_url"),
+                "source_type": row.get("source_type"),
+                "authority_level": row.get("authority_level", "unverified"),
                 "verification_status": row.get("verification_status"),
+                "module_id": row.get("module_id"),
+                "module_heading": row.get("module_heading"),
+                "section_heading": row.get("section_heading"),
+                "heading_path": row.get("heading_path"),
+                "location": row.get("location"),
+                "line_start": row.get("line_start"),
+                "line_end": row.get("line_end"),
+                "claim_ids": row.get("claim_ids", []),
+                "unresolved_refs": row.get("unresolved_refs", []),
                 "vector_id": int(vector_id),
                 "index_info": info,
             }
         )
 
-    return results
+    results.sort(
+        key=lambda item: (
+            _AUTHORITY_ORDER.get(item["authority_level"], 4),
+            -item["score"],
+        )
+    )
+    return results[:top_k]
 
 
 def retrieve(query: str, top_k: int = 5, min_similarity: float = 0.2) -> list[dict[str, Any]]:

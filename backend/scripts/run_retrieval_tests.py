@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT / "backend"))
 from app.rag.retrieve import retrieve_top_k
 
 CHUNKS_PATH = ROOT / "knowledge_base" / "processed" / "chunks.jsonl"
-OUTPUT_PATH = ROOT / "evaluation" / "phase4_retrieval_results.json"
+OUTPUT_PATH = ROOT / "evaluation" / "phase5_practical_guide_retrieval_results.json"
 EXPECTED_SOURCE_ID = "code_on_wages_2019"
 
 EVALUATION_CASES = (

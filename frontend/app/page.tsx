@@ -1,7 +1,7 @@
 'use client';
 
 import { FormEvent, useMemo, useRef, useState } from "react";
-import { ChatCitation, ChatMessage, sendChatMessage } from "@/lib/api";
+import { ChatCitation, ChatMessage, getChatErrorMessage, sendChatMessage } from "@/lib/api";
 
 type ChatEntry = ChatMessage & {
   citations?: ChatCitation[];
@@ -47,15 +47,7 @@ export default function HomePage() {
 
       setMessages((current) => [...current, assistantMessage]);
     } catch (err) {
-      const message = err instanceof Error ? err.message : "The assistant could not respond right now.";
-      setError(message);
-      setMessages((current) => [
-        ...current,
-        {
-          role: "assistant",
-          content: `I hit a backend issue while responding. Please try again.\n\n${message}`,
-        },
-      ]);
+      setError(getChatErrorMessage(err));
     } finally {
       setIsLoading(false);
       composerRef.current?.focus();
@@ -148,14 +140,29 @@ export default function HomePage() {
                         {citations.length > 0 ? (
                           <div className="citation-list">
                             {citations.map((citation, citationIndex) => {
-                              const sectionLabel = citation.section ?? citation.section_number;
-                              const pageLabel =
-                                citation.page_start && citation.page_end
-                                  ? citation.page_start === citation.page_end
-                                    ? citation.page_start
-                                    : `${citation.page_start}-${citation.page_end}`
-                                  : citation.page_start ?? "Page info unavailable";
+                              const sectionLabel =
+                                citation.module_id ??
+                                citation.section ??
+                                citation.section_number;
+                              const pageLabel = citation.page_start
+                                ? citation.page_end && citation.page_end !== citation.page_start
+                                  ? `${citation.page_start}-${citation.page_end}`
+                                  : citation.page_start
+                                : null;
                               const verificationStatus = citation.verification_status ?? "Not provided";
+                              const authorityLabel =
+                                citation.source_type === "practical_guidance"
+                                  ? "Practical guidance · non-authoritative"
+                                  : citation.source_type === "official_faq"
+                                    ? "Official explanatory guidance"
+                                    : citation.source_type === "delegated_rules"
+                                      ? "Delegated rules"
+                                      : citation.source_type === "primary_legislation"
+                                        ? "Primary legislation"
+                                        : citation.authority_level ?? citation.source_type;
+                              const isPendingReview =
+                                verificationStatus === "needs_review" ||
+                                verificationStatus === "pending_human_review";
 
                               return (
                                 <article
@@ -167,9 +174,19 @@ export default function HomePage() {
                                     {sectionLabel && <span className="citation-section">{sectionLabel}</span>}
                                   </div>
                                   <div className="citation-meta">
-                                    <span>PDF page {pageLabel}</span>
+                                    {pageLabel ? (
+                                      <span>PDF page {pageLabel}</span>
+                                    ) : citation.section_heading ? (
+                                      <span>Heading: {citation.section_heading}</span>
+                                    ) : citation.location ? (
+                                      <span>{citation.location}</span>
+                                    ) : null}
+                                    {authorityLabel && <span>{authorityLabel}</span>}
                                     <span>Verification: {verificationStatus}</span>
                                   </div>
+                                  {citation.module_heading && (
+                                    <p className="citation-reference">{citation.module_heading}</p>
+                                  )}
                                   {citation.source_url && (
                                     <a
                                       className="citation-link"
@@ -180,15 +197,30 @@ export default function HomePage() {
                                       {citation.source_url}
                                     </a>
                                   )}
+                                  {!citation.source_url && citation.source_filename && (
+                                    <p className="citation-reference">Local source: {citation.source_filename}</p>
+                                  )}
                                   {citation.chunk_id && (
                                     <p className="citation-reference">Reference: {citation.chunk_id}</p>
                                   )}
                                   {citation.source_filename && (
                                     <p className="citation-reference">Source file: {citation.source_filename}</p>
                                   )}
-                                  {verificationStatus === "needs_review" && (
+                                  {citation.claim_ids && citation.claim_ids.length > 0 && (
+                                    <p className="citation-reference">
+                                      Claim references: {citation.claim_ids.join(", ")}
+                                    </p>
+                                  )}
+                                  {citation.unresolved_refs && citation.unresolved_refs.length > 0 && (
                                     <p className="source-review-warning">
-                                      This source has not been independently verified.
+                                      Unresolved issues (not settled law): {citation.unresolved_refs.join(", ")}
+                                    </p>
+                                  )}
+                                  {isPendingReview && (
+                                    <p className="source-review-warning">
+                                      {verificationStatus === "pending_human_review"
+                                        ? "This practical guide is awaiting human review; it is not an authoritative legal source."
+                                        : "This source has not been independently verified."}
                                     </p>
                                   )}
                                 </article>
@@ -210,7 +242,7 @@ export default function HomePage() {
                 <div className="message-bubble assistant-bubble loading-bubble">Thinking…</div>
               </div>
             )}
-            {error && <div className="error-banner">{error}</div>}
+            {error && <div className="error-banner" role="alert">{error}</div>}
           </div>
         </section>
 

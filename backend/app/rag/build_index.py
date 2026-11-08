@@ -17,6 +17,13 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_CHUNKS_PATH = REPO_ROOT / "knowledge_base" / "processed" / "chunks.jsonl"
 DEFAULT_VECTOR_STORE_DIR = REPO_ROOT / "knowledge_base" / "processed" / "vector_store"
 
+SOURCE_AUTHORITY_BY_TYPE = {
+    "primary_legislation": "statutory",
+    "delegated_rules": "delegated_rules",
+    "official_faq": "official_guidance",
+    "practical_guidance": "non_authoritative",
+}
+
 
 def _load_chunks(chunks_path: str | Path = DEFAULT_CHUNKS_PATH) -> list[dict[str, Any]]:
     path = Path(chunks_path)
@@ -42,6 +49,13 @@ def _build_fingerprint(chunks: Sequence[dict[str, Any]], *, model_name: str, bat
                 "chunk_id": chunk.get("chunk_id"),
                 "source_id": chunk.get("source_id"),
                 "text": chunk.get("text", ""),
+                "source_type": chunk.get("source_type"),
+                "authority_level": chunk.get("authority_level"),
+                "verification_status": chunk.get("verification_status"),
+                "module_id": chunk.get("module_id"),
+                "section_heading": chunk.get("section_heading"),
+                "claim_ids": chunk.get("claim_ids"),
+                "unresolved_refs": chunk.get("unresolved_refs"),
             }
             for chunk in chunks
         ],
@@ -55,6 +69,7 @@ def _prepare_metadata_rows(chunks: Sequence[dict[str, Any]]) -> list[dict[str, A
     for index, chunk in enumerate(chunks):
         text = str(chunk.get("text", "")).strip()
         section_number = chunk.get("section_number")
+        source_type = chunk.get("source_type")
         record = {
             "vector_id": index,
             "chunk_id": chunk.get("chunk_id"),
@@ -65,7 +80,19 @@ def _prepare_metadata_rows(chunks: Sequence[dict[str, Any]]) -> list[dict[str, A
             "page_number": chunk.get("page_number"),
             "original_pdf_page_number": chunk.get("page_number"),
             "source_url": chunk.get("source_url"),
+            "source_type": source_type,
+            "authority_level": chunk.get("authority_level")
+            or SOURCE_AUTHORITY_BY_TYPE.get(source_type, "unverified"),
             "verification_status": chunk.get("verification_status"),
+            "module_id": chunk.get("module_id"),
+            "module_heading": chunk.get("module_heading"),
+            "section_heading": chunk.get("section_heading"),
+            "heading_path": chunk.get("heading_path"),
+            "location": chunk.get("location"),
+            "line_start": chunk.get("line_start"),
+            "line_end": chunk.get("line_end"),
+            "claim_ids": chunk.get("claim_ids", []),
+            "unresolved_refs": chunk.get("unresolved_refs", []),
             "text": text,
         }
         rows.append(record)
@@ -77,7 +104,7 @@ def build_and_save_faiss_index(
     *,
     output_dir: str | Path = DEFAULT_VECTOR_STORE_DIR,
     model_name: str = MODEL_NAME,
-    batch_size: int = 32,
+    batch_size: int = 1,
     force_rebuild: bool = False,
 ) -> dict[str, Any]:
     """Build the FAISS index from chunks and persist metadata for later retrieval."""
@@ -126,6 +153,14 @@ def build_and_save_faiss_index(
         "output_dir": str(output_path),
         "top_k_default": 5,
         "min_similarity_default": 0.2,
+        "authority_counts": {
+            authority: sum(
+                row["authority_level"] == authority for row in metadata_rows
+            )
+            for authority in sorted(
+                {row["authority_level"] for row in metadata_rows}
+            )
+        },
     }
     with info_path.open("w", encoding="utf-8") as handle:
         json.dump(info, handle, indent=2, ensure_ascii=False)

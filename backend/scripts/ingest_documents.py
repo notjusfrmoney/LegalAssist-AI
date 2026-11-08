@@ -20,6 +20,10 @@ from app.rag.extract import (
     print_ingestion_report,
     write_extracted_pages,
 )
+from app.rag.practical_guide import (
+    DEFAULT_GUIDE_PATH,
+    merge_practical_guide_manifest,
+)
 
 
 def write_checksums(raw_dir: Path, checksums_path: Path) -> None:
@@ -45,7 +49,13 @@ def main() -> None:
     pdf_files = discover_pdf_files(raw_dir)
     if not pdf_files:
         print("No PDF files found in knowledge_base/raw/.")
-        manifest_path.write_text(json.dumps({"project": "LegalAssist AI", "source_directory": "knowledge_base/raw", "documents": [], "missing_files": []}, indent=2), encoding="utf-8")
+        manifest = build_manifest(raw_dir)
+        if DEFAULT_GUIDE_PATH.is_file():
+            manifest = merge_practical_guide_manifest(manifest, DEFAULT_GUIDE_PATH)
+        manifest_path.write_text(
+            json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
         checksums_path.write_text("{}\n", encoding="utf-8")
         return
 
@@ -54,6 +64,8 @@ def main() -> None:
         write_extracted_pages(records, extracted_dir)
 
     manifest = build_manifest(raw_dir)
+    if DEFAULT_GUIDE_PATH.is_file():
+        manifest = merge_practical_guide_manifest(manifest, DEFAULT_GUIDE_PATH)
     manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     write_checksums(raw_dir, checksums_path)
 
