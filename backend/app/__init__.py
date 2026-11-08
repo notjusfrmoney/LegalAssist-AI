@@ -1,0 +1,1 @@
+"""LegalAssist AI backend package."""

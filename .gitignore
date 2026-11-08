@@ -1,0 +1,51 @@
+# Secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python
+.venv/
+venv/
+**/.venv/
+**/venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local source PDFs (do not commit the downloaded originals by default)
+knowledge_base/raw/*.pdf
+data/*.pdf
+
+# Temporary files
+*.tmp
+*.log
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+.env.local
+**/.env.local
+.vercel/
+**/.vercel/
+
+# Downloaded embedding model caches
+.cache/
+**/.cache/
+.huggingface/
+**/.huggingface/
+**/models--*/

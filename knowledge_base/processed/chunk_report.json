@@ -1,0 +1,10 @@
+{
+  "chunk_count": 158,
+  "chunk_size": 3500,
+  "overlap": 400,
+  "total_characters": 186810,
+  "total_tokens_estimate": 31451,
+  "average_chunk_characters": 1182.34,
+  "max_chunk_characters": 3469,
+  "oversized_sections": []
+}

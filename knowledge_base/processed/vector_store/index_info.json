@@ -1,0 +1,12 @@
+{
+  "model_name": "BAAI/bge-small-en-v1.5",
+  "embedding_dim": 384,
+  "chunk_count": 158,
+  "vector_count": 158,
+  "fingerprint": "d8aa94ff8f46bf8e199f9165d978e22291ebf85a380a497c2b10b51c36fe532d",
+  "built_at_utc": "2026-11-08T05:41:04.021973+00:00",
+  "chunks_path": "C:\\Users\\91832\\Desktop\\kukuFM\\knowledge_base\\processed\\chunks.jsonl",
+  "output_dir": "C:\\Users\\91832\\Desktop\\kukuFM\\knowledge_base\\processed\\vector_store",
+  "top_k_default": 5,
+  "min_similarity_default": 0.2
+}

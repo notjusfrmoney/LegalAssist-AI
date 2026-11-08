@@ -1,0 +1,90 @@
+{
+  "project": "LegalAssist AI",
+  "source_directory": "knowledge_base/raw",
+  "documents": [
+    {
+      "source_id": "code_on_wages_central_rules_2026",
+      "filename": "6eb0c35ba63b776487a025e5123b6b12.pdf",
+      "document_title": "Code on Wages (Central) Rules, 2026",
+      "publisher": "Government of India, Ministry of Labour and Employment",
+      "source_url": "https://www.labour.gov.in/static/uploads/2026/05/6eb0c35ba63b776487a025e5123b6b12.pdf",
+      "source_type": "delegated_rules",
+      "jurisdiction": "India",
+      "government_sphere": "central",
+      "publication_date": "2026-05-08",
+      "effective_status_note": "Central Rules for the Central sphere; not automatically applicable to every State-sphere establishment.",
+      "verification_status": "needs_review",
+      "is_primary_legal_source": false,
+      "file_status": "present"
+    },
+    {
+      "source_id": "labour_codes_additional_faq_march_2026",
+      "filename": "a4ccf4c6d97c4f1f36a6d83f8c64213d.pdf",
+      "document_title": "Additional FAQs on Labour Codes, as on 16 March 2026",
+      "publisher": "Government of India, Ministry of Labour and Employment",
+      "source_url": "https://www.labour.gov.in/static/uploads/2026/03/a4ccf4c6d97c4f1f36a6d83f8c64213d.pdf",
+      "source_type": "official_faq",
+      "jurisdiction": "India",
+      "government_sphere": "central_and_state_code",
+      "publication_date": "2026-03-16",
+      "effective_status_note": "Official explanatory guidance; lower authority than the Act and Rules.",
+      "verification_status": "needs_review",
+      "is_primary_legal_source": false,
+      "file_status": "present"
+    },
+    {
+      "source_id": "code_on_wages_2019",
+      "filename": "c328da14bbb15fc4ad571dc33e7a4ab3.pdf",
+      "document_title": "Code on Wages, 2019",
+      "publisher": "Government of India, Ministry of Labour and Employment",
+      "source_url": "https://labour.gov.in/sites/default/files/the_code_on_wages_2019_no._29_of_2019.pdf",
+      "source_type": "primary_legislation",
+      "jurisdiction": "India",
+      "government_sphere": "central_and_state_code",
+      "publication_date": "2019-08-08",
+      "effective_status_note": "Primary legislation; applicability depends on the establishment, sphere and facts.",
+      "verification_status": "needs_review",
+      "is_primary_legal_source": true,
+      "file_status": "present"
+    },
+    {
+      "source_id": "labour_codes_faq_january_2026",
+      "filename": "de4758d5bfeffc456d7de97a801891b0.pdf",
+      "document_title": "Ministry of Labour FAQs on Labour Codes, January 2026",
+      "publisher": "Government of India, Ministry of Labour and Employment",
+      "source_url": "https://www.labour.gov.in/static/uploads/2026/01/de4758d5bfeffc456d7de97a801891b0.pdf",
+      "source_type": "official_faq",
+      "jurisdiction": "India",
+      "government_sphere": "central_and_state_code",
+      "publication_date": "2026-01-01",
+      "effective_status_note": "Official explanatory guidance; lower authority than the Act and Rules.",
+      "verification_status": "needs_review",
+      "is_primary_legal_source": false,
+      "file_status": "present"
+    }
+  ],
+  "external_references": [
+    {
+      "source_id": "code_on_wages_commencement_notification_2025",
+      "document_title": "Code on Wages Commencement Notification, 2025",
+      "filename": "code_on_wages_commencement_notification_2025.pdf",
+      "publisher": "Government of India, Ministry of Labour and Employment",
+      "source_url": "https://labour.gov.in/sites/default/files/code_on_wages_commencement_notification_2025.pdf",
+      "source_type": "commencement_notification",
+      "jurisdiction": "India",
+      "government_sphere": "central_and_state_code",
+      "publication_date": "2025-01-01",
+      "effective_status_note": "Official commencement notification; not locally ingested in the current source pack.",
+      "verification_status": "external_reference",
+      "is_primary_legal_source": false,
+      "file_status": "not_locally_ingested"
+    }
+  ],
+  "missing_files": [
+    "code_on_wages_2019.pdf",
+    "code_on_wages_commencement_notification_2025.pdf",
+    "code_on_wages_central_rules_2026.pdf",
+    "labour_codes_faq_january_2026.pdf",
+    "labour_codes_additional_faq_march_2026.pdf"
+  ]
+}

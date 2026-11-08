@@ -1,0 +1,52 @@
+[
+  {
+    "id": "TC-01",
+    "description": "Monthly salary not paid by the expected date.",
+    "user_message": "My employer has not paid my salary for this month."
+  },
+  {
+    "id": "TC-02",
+    "description": "Salary paid late for two months.",
+    "user_message": "I was paid late twice and I am worried about delayed wages."
+  },
+  {
+    "id": "TC-03",
+    "description": "Employer deducts money for alleged equipment damage.",
+    "user_message": "My employer deducted money for damaged equipment and I do not know if this is allowed."
+  },
+  {
+    "id": "TC-04",
+    "description": "Employer makes deductions above the statutory cap.",
+    "user_message": "My employer deducted a large amount from my salary without explaining it."
+  },
+  {
+    "id": "TC-05",
+    "description": "Employee resigns and asks about unpaid final wages.",
+    "user_message": "I resigned last month and my employer has not paid my final wages."
+  },
+  {
+    "id": "TC-06",
+    "description": "Employee dismissed and asks about unpaid wages.",
+    "user_message": "I was dismissed and the company still owes me unpaid salary for the last month."
+  },
+  {
+    "id": "TC-07",
+    "description": "User asks for a minimum-wage amount without providing jurisdiction.",
+    "user_message": "What is the minimum wage in my area?"
+  },
+  {
+    "id": "TC-08",
+    "description": "State-specific procedure but no State rules are present.",
+    "user_message": "What is the procedure to claim my unpaid wages in my State?"
+  },
+  {
+    "id": "TC-09",
+    "description": "User is a consultant or independent contractor.",
+    "user_message": "I am a consultant and my client owes me money for work done."
+  },
+  {
+    "id": "TC-10",
+    "description": "User asks for gratuity or wrongful termination.",
+    "user_message": "I was fired unfairly and want to know if I can get gratuity or file a complaint."
+  }
+]

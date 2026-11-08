@@ -1,0 +1,150 @@
+{
+  "phase": 3,
+  "status": "complete",
+  "tests_passed": true,
+  "warning_cause": "DeprecationWarning from starlette.testclient about anyio.abc.BlockingPortal; not a project chunking bug.",
+  "chunk_size": 3500,
+  "overlap": 400,
+  "chunk_count": 178,
+  "average_chunk_characters": 1049.38,
+  "max_chunk_characters": 3469,
+  "source_coverage": {
+    "code_on_wages_2019": {
+      "filename": "code_on_wages_2019.jsonl",
+      "source_id": "code_on_wages_2019",
+      "record_count": 29,
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "coverage_ratio": 1.0,
+      "missing_tokens": 0,
+      "extracted_characters": 95042,
+      "chunk_characters": 94939
+    },
+    "code_on_wages_central_rules_2026": {
+      "filename": "code_on_wages_central_rules_2026.jsonl",
+      "source_id": "code_on_wages_central_rules_2026",
+      "record_count": 32,
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "coverage_ratio": 1.0,
+      "missing_tokens": 0,
+      "extracted_characters": 74238,
+      "chunk_characters": 74233
+    },
+    "labour_codes_additional_faq_march_2026": {
+      "filename": "labour_codes_additional_faq_march_2026.jsonl",
+      "source_id": "labour_codes_additional_faq_march_2026",
+      "record_count": 5,
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "coverage_ratio": 1.0,
+      "missing_tokens": 0,
+      "extracted_characters": 11303,
+      "chunk_characters": 11303
+    },
+    "labour_codes_faq_january_2026": {
+      "filename": "labour_codes_faq_january_2026.jsonl",
+      "source_id": "labour_codes_faq_january_2026",
+      "record_count": 4,
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "coverage_ratio": 1.0,
+      "missing_tokens": 0,
+      "extracted_characters": 5963,
+      "chunk_characters": 5963
+    }
+  },
+  "missing_text": [],
+  "duplicate_content_beyond_overlap": false,
+  "section_17_18_separate": true,
+  "faq_questions_and_answers_remain_together": true,
+  "faq_examples": [
+    {
+      "question": "What does the term “wages” mean?",
+      "answer_fragment": "The definition of “Wages” covers:"
+    },
+    {
+      "question": "What does the term “wages” mean?",
+      "answer_fragment": "The definition of “Wages” covers"
+    },
+    {
+      "question": "What is the 50% rule for allowances?",
+      "answer_fragment": "If the allowances and benefits together"
+    }
+  ],
+  "subsections_and_provisos_associated_with_parent_sections": true,
+  "metadata_ok": true,
+  "warnings": [
+    "DeprecationWarning from starlette.testclient: anyio.abc.BlockingPortal alias is deprecated in the installed dependency chain."
+  ]
+}

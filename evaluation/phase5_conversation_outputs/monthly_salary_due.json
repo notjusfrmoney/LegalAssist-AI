@@ -1,0 +1,50 @@
+{
+  "conversation_id": "monthly_salary_due",
+  "request": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "When should an employer pay monthly salary?"
+      }
+    ],
+    "profile": {
+      "state": "Maharashtra",
+      "employment_type": "monthly salaried"
+    }
+  },
+  "response": {
+    "answer": "The retrieved Code on Wages text states that wages for employees engaged on a monthly basis must be paid before the expiry of the seventh day of the succeeding month. [Code on Wages, 2019, Section 17, PDF page 9]\n\nSource note: The locally indexed sources are marked needs_review and have not been independently verified by this system.",
+    "citations": [
+      {
+        "chunk_id": "code_on_wages_2019-page-9-chunk-003",
+        "source_id": "code_on_wages_2019",
+        "document_title": "Code on Wages, 2019",
+        "section": "17",
+        "section_number": "17",
+        "page_start": 9,
+        "page_end": 9,
+        "source_url": "https://labour.gov.in/sites/default/files/the_code_on_wages_2019_no._29_of_2019.pdf",
+        "verification_status": "needs_review",
+        "excerpt": "17. (1) The employer shall pay or cause to be paid wages to the employees, engaged\non—\n(i) daily basis, at the end of the shift;\n(ii) weekly basis, on the last working day of the week, that is to say, before the\nweekly holiday;\n(iii) fortnightly basis, before the end of the second day after the end of the\nfortnight;\n(iv) monthly basis, before the expiry of the seventh day of the succeeding\nmonth.\n(2) Where an employee has been—\n(i) removed or dismissed from service; or\n(ii) retrenched or has resigned from service, or became unemployed due to\nclosure of the establishment,\nthe wages payable to him shall be paid within two working days of his removal, dismissal,\nretrenchment or, as the case may"
+      }
+    ],
+    "sources": [
+      {
+        "chunk_id": "code_on_wages_2019-page-9-chunk-003",
+        "source_id": "code_on_wages_2019",
+        "document_title": "Code on Wages, 2019",
+        "section": "17",
+        "section_number": "17",
+        "page_start": 9,
+        "page_end": 9,
+        "source_url": "https://labour.gov.in/sites/default/files/the_code_on_wages_2019_no._29_of_2019.pdf",
+        "verification_status": "needs_review",
+        "excerpt": "17. (1) The employer shall pay or cause to be paid wages to the employees, engaged\non—\n(i) daily basis, at the end of the shift;\n(ii) weekly basis, on the last working day of the week, that is to say, before the\nweekly holiday;\n(iii) fortnightly basis, before the end of the second day after the end of the\nfortnight;\n(iv) monthly basis, before the expiry of the seventh day of the succeeding\nmonth.\n(2) Where an employee has been—\n(i) removed or dismissed from service; or\n(ii) retrenched or has resigned from service, or became unemployed due to\nclosure of the establishment,\nthe wages payable to him shall be paid within two working days of his removal, dismissal,\nretrenchment or, as the case may"
+      }
+    ],
+    "needs_clarification": false,
+    "clarification_needed": false,
+    "follow_up_question": null,
+    "scope_note": null
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "When should an employer pay monthly salary?": [
+    {
+      "chunk_id": "code_on_wages_2019-page-9-chunk-002",
+      "score": 0.778367,
+      "source_id": "code_on_wages_2019",
+      "document_title": "Code on Wages, 2019",
+      "section_number": "16",
+      "page_number": 9,
+      "source_url": "https://labour.gov.in/sites/default/files/the_code_on_wages_2019_no._29_of_2019.pdf",
+      "verification_status": "needs_review",
+      "text_preview": "16. The employer shall fix the wage period for employees either as daily or weekly or\nfortnightly or monthly subject to the condition that no wage period in respect of any employee\nshall be more than a month:\nProvided that different wage periods may be fixed for different establishments."
+    },
+    {
+      "chunk_id": "code_on_wages_2019-page-8-chunk-006",
+      "score": 0.696765,
+      "source_id": "code_on_wages_2019",
+      "document_title": "Code on Wages, 2019",
+      "section_number": "15",
+      "page_number": 8,
+      "source_url": "https://labour.gov.in/sites/default/files/the_code_on_wages_2019_no._29_of_2019.pdf",
+      "verification_status": "needs_review",
+      "text_preview": "15. All wages shall be paid in current coin or currency notes or by cheque or by\ncrediting the wages in the bank account of the employee or by the electronic mode:\nFixing hours\nof work for\nnormal\nworking day.\nWages for\novertime\nwork.\nMode of\npayment of\nwages.\nWages for\ntwo or more\nclasses of\nwork.\nMinimum\ntime rate\nwages for\npiece work."
+    },
+    {
+      "chunk_id": "code_on_wages_2019-page-9-chunk-003",
+      "score": 0.690172,
+      "source_id": "code_on_wages_2019",
+      "document_title": "Code on Wages, 2019",
+      "section_number": "17",
+      "page_number": 9,
+      "source_url": "https://labour.gov.in/sites/default/files/the_code_on_wages_2019_no._29_of_2019.pdf",
+      "verification_status": "needs_review",
+      "text_preview": "17. (1) The employer shall pay or cause to be paid wages to the employees, engaged\non—\n(i) daily basis, at the end of the shift;\n(ii) weekly basis, on the last working day of the week, that is to say, before the\nweekly holiday;\n(iii) fortnightly basis, before the end of the second day after the end of the\nfortnight;\n(iv) monthly basis, before the expiry of the seventh day of the succeeding\nmonth.\n"
+    }
+  ],
+  "What deductions can an employer make from wages?": [
+    {
+      "chunk_id": "code_on_wages_2019-page-9-chunk-004",
+      "score": 0.79293,
+      "source_id": "code_on_wages_2019",
+      "document_title": "Code on Wages, 2019",
+      "section_number": "18",
+      "page_number": 9,
+      "source_url": "https://labour.gov.in/sites/default/files/the_code_on_wages_2019_no._29_of_2019.pdf",
+      "verification_status": "needs_review",
+      "text_preview": "18. (1) Notwithstanding anything contained in any other law for the time being in\nforce, there shall be no deductions from the wages of the employee, except those as are\nauthorised under this Code.\nExplanation.––For the purposes of this sub-section,—\n(a) any payment made by an employee to the employer or his agent shall be\ndeemed to be a deduction from his wages;\n(b) any loss of wages to an employ"
+    },
+    {
+      "chunk_id": "code_on_wages_2019-page-12-chunk-003",
+      "score": 0.76868,
+      "source_id": "code_on_wages_2019",
+      "document_title": "Code on Wages, 2019",
+      "section_number": "22",
+      "page_number": 12,
+      "source_url": "https://labour.gov.in/sites/default/files/the_code_on_wages_2019_no._29_of_2019.pdf",
+      "verification_status": "needs_review",
+      "text_preview": "22. A deduction under clause (d) or clause (e) of sub-section (2) of section 18 shall not\nbe made from the wages of an employee, unless the house-accommodation amenity or\nservice has been accepted by him as a term of employment or otherwise and such deduction\nshall not exceed an amount equivalent to the value of the house-accommodation amenity or\nservice supplied and shall be subject to such condi"
+    },
+    {
+      "chunk_id": "code_on_wages_2019-page-11-chunk-003",
+      "score": 0.750758,
+      "source_id": "code_on_wages_2019",
+      "document_title": "Code on Wages, 2019",
+      "section_number": "20",
+      "page_number": 11,
+      "source_url": "https://labour.gov.in/sites/default/files/the_code_on_wages_2019_no._29_of_2019.pdf",
+      "verification_status": "needs_review",
+      "text_preview": "20. (1) Deductions may be made under clause (b) of sub-section (2) of section 18 only\non account of the absence of an employee from the place or places where by the terms of his\nemployment, he is required to work, such absence being for the whole or any part of the\nperiod during which he is so required to work.\n(2) The amount of such deduction shall in no case bear to the wages payable to the\nempl"
+    }
+  ],
+  "Is an employee entitled to overtime wages?": [
+    {
+      "chunk_id": "code_on_wages_2019-page-8-chunk-005",
+      "score": 0.74064,
+      "source_id": "code_on_wages_2019",
+      "document_title": "Code on Wages, 2019",
+      "section_number": "14",
+      "page_number": 8,
+      "source_url": "https://labour.gov.in/sites/default/files/the_code_on_wages_2019_no._29_of_2019.pdf",
+      "verification_status": "needs_review",
+      "text_preview": "14. Where an employee whose minimum rate of wages has been fixed under this Code\nby the hour, by the day or by such a longer wage-period as may be prescribed, works on any\nday in excess of the number of hours constituting a normal working day, the employer shall\npay him for every hour or for part of an hour so worked in excess, at the overtime rate which\nshall not be less than twice the normal rat"
+    },
+    {
+      "chunk_id": "code_on_wages_2019-page-8-chunk-006",
+      "score": 0.736406,
+      "source_id": "code_on_wages_2019",
+      "document_title": "Code on Wages, 2019",
+      "section_number": "15",
+      "page_number": 8,
+      "source_url": "https://labour.gov.in/sites/default/files/the_code_on_wages_2019_no._29_of_2019.pdf",
+      "verification_status": "needs_review",
+      "text_preview": "15. All wages shall be paid in current coin or currency notes or by cheque or by\ncrediting the wages in the bank account of the employee or by the electronic mode:\nFixing hours\nof work for\nnormal\nworking day.\nWages for\novertime\nwork.\nMode of\npayment of\nwages.\nWages for\ntwo or more\nclasses of\nwork.\nMinimum\ntime rate\nwages for\npiece work."
+    },
+    {
+      "chunk_id": "code_on_wages_2019-page-9-chunk-003",
+      "score": 0.735721,
+      "source_id": "code_on_wages_2019",
+      "document_title": "Code on Wages, 2019",
+      "section_number": "17",
+      "page_number": 9,
+      "source_url": "https://labour.gov.in/sites/default/files/the_code_on_wages_2019_no._29_of_2019.pdf",
+      "verification_status": "needs_review",
+      "text_preview": "17. (1) The employer shall pay or cause to be paid wages to the employees, engaged\non—\n(i) daily basis, at the end of the shift;\n(ii) weekly basis, on the last working day of the week, that is to say, before the\nweekly holiday;\n(iii) fortnightly basis, before the end of the second day after the end of the\nfortnight;\n(iv) monthly basis, before the expiry of the seventh day of the succeeding\nmonth.\n"
+    }
+  ],
+  "What happens to unpaid wages after resignation?": [
+    {
+      "chunk_id": "code_on_wages_2019-page-9-chunk-003",
+      "score": 0.752431,
+      "source_id": "code_on_wages_2019",
+      "document_title": "Code on Wages, 2019",
+      "section_number": "17",
+      "page_number": 9,
+      "source_url": "https://labour.gov.in/sites/default/files/the_code_on_wages_2019_no._29_of_2019.pdf",
+      "verification_status": "needs_review",
+      "text_preview": "17. (1) The employer shall pay or cause to be paid wages to the employees, engaged\non—\n(i) daily basis, at the end of the shift;\n(ii) weekly basis, on the last working day of the week, that is to say, before the\nweekly holiday;\n(iii) fortnightly basis, before the end of the second day after the end of the\nfortnight;\n(iv) monthly basis, before the expiry of the seventh day of the succeeding\nmonth.\n"
+    },
+    {
+      "chunk_id": "code_on_wages_2019-page-4-chunk-002",
+      "score": 0.714237,
+      "source_id": "code_on_wages_2019",
+      "document_title": "Code on Wages, 2019",
+      "section_number": "2",
+      "page_number": 4,
+      "source_url": "https://labour.gov.in/sites/default/files/the_code_on_wages_2019_no._29_of_2019.pdf",
+      "verification_status": "needs_review",
+      "text_preview": "section 2 of the Industrial Disputes Act, 1947;\n(y) \"wages\" means all remuneration whether by way of salaries, allowances or\notherwise, expressed in terms of money or capable of being so expressed which would,\nif the terms of employment, express or implied, were fulfilled, be payable to a person\nemployed in respect of his employment or of work done in such employment, and\nincludes,—\n(i) basic pay;"
+    },
+    {
+      "chunk_id": "code_on_wages_2019-page-14-chunk-004",
+      "score": 0.699377,
+      "source_id": "code_on_wages_2019",
+      "document_title": "Code on Wages, 2019",
+      "section_number": "29",
+      "page_number": 14,
+      "source_url": "https://labour.gov.in/sites/default/files/the_code_on_wages_2019_no._29_of_2019.pdf",
+      "verification_status": "needs_review",
+      "text_preview": "29. Notwithstanding anything contained in this Code, an employee shall be disqualified\nfrom receiving bonus under this Code, if he is dismissed from service for––\n(a) fraud; or\n(b) riotous or violent behaviour while on the premises of the establishment; or\n(c) theft, misappropriation or sabotage of any property of the establishment; or\n(d) conviction for sexual harassment."
+    }
+  ]
+}
